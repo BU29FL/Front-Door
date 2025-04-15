@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wunderlich Malec - Baldwin (FL) Directory</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+    }
+    .logo {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    #searchInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    @media (max-width: 600px) {
+      th, td {
+        font-size: 14px;
+        padding: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Replace the logo source below with the actual image file name or URL -->
+  <img src="your-logo.png" alt="Wunderlich Malec Logo" class="logo" />
+
+  <h1>Welcome to Wunderlich Malec - Baldwin (FL)</h1>
+
+  <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Search for positions or names..." />
+
+  <table id="employeeTable">
+    <thead>
+      <tr>
+        <th>Position</th>
+        <th>Name</th>
+        <th>Phone Number</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Electrical Supervisor</td>
+        <td>John Smith</td>
+        <td>(123) 456-7890</td>
+      </tr>
+      <tr>
+        <td>Project Manager</td>
+        <td>Sarah Lee</td>
+        <td></td>
+      </tr>
+      <!-- Add more employee rows here -->
+    </tbody>
+  </table>
+
+  <script>
+    function filterTable() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("employeeTable");
+      const trs = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < trs.length; i++) {
+        const tds = trs[i].getElementsByTagName("td");
+        let showRow = false;
+        for (let j = 0; j < tds.length; j++) {
+          if (tds[j].textContent.toLowerCase().includes(filter)) {
+            showRow = true;
+            break;
+          }
+        }
+        trs[i].style.display = showRow ? "" : "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
